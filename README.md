@@ -1,83 +1,70 @@
-# D.A.R.T - Direct Automotive Receiver & Transmitter
+# D.A.R.T (Driver Assistance and Resource Tracking)
 
-D.A.R.T (Direct Automotive Receiver & Transmitter) is a FiveM resource that allows police officers in emergency vehicles to track suspects by firing tracking darts at their vehicles. The tracking darts create blips on the map that update every minute, providing real-time location information to the emergency vehicle operators.
+![D.A.R.T](https://media.discordapp.net/attachments/982855421779922944/1113885039541882970/64756725cd2c8.webp)
+
+D.A.R.T is a resource for FiveM that provides driver assistance and vehicle tracking functionality for emergency vehicles. It allows players to mark and track nearby vehicles, enhancing their ability to respond to emergencies effectively. The resource includes server-side and client-side scripts, along with a configuration file to customize various options.
 
 ## Features
 
-- Police officers in emergency vehicles can fire tracking darts at nearby vehicles.
+- Track nearby vehicles from an emergency vehicle
 
-- Tracking darts create blips on the map that update every minute.
+- Marked vehicle location updates in real-time on the map
 
-- Tracking darts remain active for 30 minutes.
+- Cooldown system to prevent spamming the tracking feature
 
-- The tracking darts can be canceled by using the `/stopdart` command.
+- Customizable blip settings
 
-- Customizable cooldown duration and distance limit for firing darts.
+## Roadmap
 
-- Ability to add custom sound events for firing and removing darts.
+Here's a roadmap of the planned features and improvements for D.A.R.T:
 
-- Exports available for integration with other resources.
+- [x] Implement basic vehicle tracking functionality
 
-## Getting Started
+- [x] Add cooldown system to prevent spamming
 
-### Prerequisites
+- [x] Customize blip settings
 
-- [FiveM](https://fivem.net/) server with appropriate permissions to install resources.
+- [ ] Add particle effect to indicate marked vehicles
 
-### Installation
+- [ ] Implement sound effects for tracking events
 
-1. Clone or download this repository.
+- [ ] Create a job bridge for integration with job systems (e.g., ESX, vRP)
 
-2. Rename the folder to `darttracker` (optional).
+- [ ] Add additional configurable options for more customization
 
-3. Place the `darttracker` folder in the `resources` directory of your FiveM server.
+- [ ] Implement a command to toggle tracking on/off
 
-4. Add the following line to your server.cfg file:
+- [ ] Add support for marking multiple vehicles simultaneously
 
-   ```
+- [ ] Bug fixes and optimizations
 
-   start darttracker
+## Installation
 
-   ```
+1. Download the latest release of D.A.R.T.
 
-### Usage
+2. Extract the contents of the ZIP file into your FiveM server resources folder.
 
-- Police officers in emergency vehicles can type `/dart` to fire a tracking dart at a nearby vehicle.
+3. Add `start dart` to your server.cfg file.
 
-- The tracking dart will stay attached to the targeted vehicle for 30 minutes.
+## Configuration
 
-- The blip on the map showing the vehicle's location updates every minute.
+You can customize the behavior of D.A.R.T by modifying the options in the `config.lua` file. Here are the configurable options:
 
-- To cancel a tracking dart, type `/stopdart` in an emergency vehicle.
+- `TrackingDuration`: The duration (in seconds) for which a vehicle is tracked.
 
-### Customization
+- `CooldownDuration`: The duration (in seconds) of the cooldown period between tracking attempts.
 
-- You can customize the cooldown duration and distance limit for firing darts by modifying the `dartCooldownDuration` and `dartDistanceLimit` variables in the `server.lua` file.
+- `BlipSprite`: The sprite ID of the blip displayed on the map for marked vehicles.
 
-- To add custom sound events, modify the script and add your own sound event triggers.
+- `BlipColor`: The color ID of the blip displayed on the map for marked vehicles.
 
-### Exports
+- `BlipDisplay`: The display mode of the blip on the map for marked vehicles.
 
-The following exports are available for integration with other resources:
+## Usage
 
-- `StartDart(source, target)`: Starts tracking a specified target player's vehicle with a dart.
-
-- `StopDart(source, target)`: Stops tracking a specified target player's vehicle.
-
-To use these exports, you can use the following syntax in your Lua script:
-
-```lua
-
-exports['darttracker']:StartDart(source, target)
-
-exports['darttracker']:StopDart(source, target)
-
-```
-
-## Credits
-
-- Developed by [TheStoicBear](https://github.com/TheStoicBear)
+To start tracking a nearby vehicle, enter an emergency vehicle and use the `/track` command. The nearest vehicle will be marked with a blip on the map, indicating its location. The blip will be visible to all players on the server. There is a cooldown period between each tracking attempt to prevent spamming.
 
 ## License
 
-This resource is licensed under the [MIT License](LICENSE).
+D.A.R.T is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
