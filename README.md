@@ -1,4 +1,5 @@
-# D.A.R.T (Driver Assistance and Resource Tracking)
+# D.A.R.T
+Direct Automotive Reciver & Transmitter
 
 ![D.A.R.T](https://media.discordapp.net/attachments/982855421779922944/1113885039541882970/64756725cd2c8.webp)
 
@@ -62,7 +63,7 @@ You can customize the behavior of D.A.R.T by modifying the options in the `confi
 
 ## Usage
 
-To start tracking a nearby vehicle, enter an emergency vehicle and use the `/track` command. The nearest vehicle will be marked with a blip on the map, indicating its location. The blip will be visible to all players on the server. There is a cooldown period between each tracking attempt to prevent spamming.
+To start tracking a nearby vehicle, enter an emergency vehicle and use the `/firedart` command. The nearest vehicle will be marked with a blip on the map, indicating its location. The blip will be visible to all players on the server. There is a cooldown period between each tracking attempt to prevent spamming.
 
 ## License
 
